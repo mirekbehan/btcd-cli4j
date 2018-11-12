@@ -65,7 +65,7 @@ public class BtcdClientImpl implements BtcdClient {
 		initialize();
 		rpcClient = new JsonRpcClientImpl(configurator.checkHttpProvider(httpProvider), 
 				configurator.checkNodeConfig(nodeConfig));
-		configurator.checkNodeVersion(getInfo().getVersion());
+		//configurator.checkNodeVersion(getInfo().getVersion());
 		configurator.checkNodeHealth((Block)getBlock(getBestBlockHash(), true));
 	}
 
@@ -386,12 +386,14 @@ public class BtcdClientImpl implements BtcdClient {
 		return hashesPerSec;
 	}
 
+/*
 	@Override
 	public Info getInfo() throws BitcoindException, CommunicationException {
 		String infoJson = rpcClient.execute(Commands.GET_INFO.getName());
 		Info info = rpcClient.getMapper().mapToEntity(infoJson, Info.class);
 		return info;
 	}
+*/
 
 	@Override
 	public MemPoolInfo getMemPoolInfo() throws BitcoindException, CommunicationException {

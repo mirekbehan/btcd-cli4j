@@ -1,0 +1,7 @@
+include ':btcd-cli4j-core'
+include ':btcd-cli4j-daemon'
+include ':btcd-cli4j-examples'
+
+project(':btcd-cli4j-core').projectDir = "$rootDir/external-btc/btcd-cli4j/core" as File
+project(':btcd-cli4j-daemon').projectDir = "$rootDir/external-btc/btcd-cli4j/daemon" as File
+project(':btcd-cli4j-examples').projectDir = "$rootDir/external-btc/btcd-cli4j/examples" as File
