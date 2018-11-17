@@ -1,6 +1,14 @@
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.maven.apache.org/maven2" }
+}
 
 description = 'btcd-cli4j Core'
 dependencies {
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.16.2'
     compile group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.3.6'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version:'2.5.0'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version:'2.5.0'
